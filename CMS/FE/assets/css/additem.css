@@ -1,0 +1,57 @@
+
+.container-table {
+    max-width: 800px; 
+    margin: 0 auto;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.container-table h1 {
+    font-size: 28px;
+    color: #333333;
+    margin-bottom: 20px;
+}
+
+.container-table .input-field {
+    margin-bottom: 20px;
+}
+
+.container-table label {
+    font-weight: bold;
+    color: #555555;
+}
+
+.container-table input[type="text"],
+.container-table input[type="email"] {
+    width: 100%;
+    height: 40px;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 16px;
+}
+
+.container-table .btn {
+    width: 100%;
+    height: 45px;
+    background-color: #28a745;
+    border: none;
+    border-radius: 5px;
+    color: #ffffff;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.container-table .btn:hover {
+    background-color: #218838;
+}
+
+.col-md-4{
+    max-width: 85%; /* Ensure the image does not exceed its container width */
+    height: 300; /* Maintain aspect ratio */
+    display: block; /* Ensure the image is displayed as a block element */
+    margin: auto;
+    width: 400;
+}
