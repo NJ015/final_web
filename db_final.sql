@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: May 07, 2024 at 08:21 AM
+-- Generation Time: May 07, 2024 at 08:55 AM
 -- Server version: 8.2.0
 -- PHP Version: 8.2.13
 
@@ -31,10 +31,19 @@ DROP TABLE IF EXISTS `tbl_jewelry`;
 CREATE TABLE IF NOT EXISTS `tbl_jewelry` (
   `ID` int NOT NULL AUTO_INCREMENT,
   `NAME` varchar(100) NOT NULL,
-  `DESCRIPTION` varchar(1000) NOT NULL,
-  `IS_ACTIVE` tinyint(1) NOT NULL,
+  `TYPE` varchar(1000) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `PRICE` int NOT NULL,
+  `IS_ACTIVE` tinyint(1) NOT NULL DEFAULT '1',
   PRIMARY KEY (`ID`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `tbl_jewelry`
+--
+
+INSERT INTO `tbl_jewelry` (`ID`, `NAME`, `TYPE`, `PRICE`, `IS_ACTIVE`) VALUES
+(1, 'jewel', 'veryNice', 0, 1),
+(2, 'jewe1', 'gold', 500, 1);
 
 -- --------------------------------------------------------
 
