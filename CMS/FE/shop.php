@@ -10,7 +10,7 @@ getall();
 <html lang="en">
 
 <head>
-    <title>Zay Shop - Product Listing Page</title>
+    <title>ClairéJewels - Product Listing Page</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -61,7 +61,7 @@ https://templatemo.com/tm-559-zay-shop
         <div class="container d-flex justify-content-between align-items-center">
 
             <a class="navbar-brand text-success logo h1 align-self-center" href="index.php">
-                Zay
+            ClairéJewels
             </a>
 
             <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#templatemo_main_nav" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -332,7 +332,7 @@ https://templatemo.com/tm-559-zay-shop
             <div class="row">
 
                 <div class="col-md-4 pt-5">
-                    <h2 class="h2 text-success border-bottom pb-3 border-light logo">Jewelry Shop</h2>
+                    <h2 class="h2 text-success border-bottom pb-3 border-light logo">ClairéJewels</h2>
                     <ul class="list-unstyled text-light footer-link-list">
                         <li>
                             <i class="fas fa-map-marker-alt fa-fw"></i>
