@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: May 07, 2024 at 08:55 AM
+-- Generation Time: May 07, 2024 at 10:32 AM
 -- Server version: 8.2.0
 -- PHP Version: 8.2.13
 
@@ -24,6 +24,22 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `tbl_contact`
+--
+
+DROP TABLE IF EXISTS `tbl_contact`;
+CREATE TABLE IF NOT EXISTS `tbl_contact` (
+  `ID` int NOT NULL AUTO_INCREMENT,
+  `NAME` int NOT NULL,
+  `EMAIL` varchar(100) NOT NULL,
+  `SUBJECT` varchar(1000) NOT NULL,
+  `MESSAGE` varchar(1000) NOT NULL,
+  PRIMARY KEY (`ID`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `tbl_jewelry`
 --
 
@@ -35,7 +51,7 @@ CREATE TABLE IF NOT EXISTS `tbl_jewelry` (
   `PRICE` int NOT NULL,
   `IS_ACTIVE` tinyint(1) NOT NULL DEFAULT '1',
   PRIMARY KEY (`ID`)
-) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Dumping data for table `tbl_jewelry`
@@ -43,7 +59,12 @@ CREATE TABLE IF NOT EXISTS `tbl_jewelry` (
 
 INSERT INTO `tbl_jewelry` (`ID`, `NAME`, `TYPE`, `PRICE`, `IS_ACTIVE`) VALUES
 (1, 'jewel', 'veryNice', 0, 1),
-(2, 'jewe1', 'gold', 500, 1);
+(2, 'jewe1', 'gold', 500, 1),
+(3, 'jwww', 'hhh', 800, 1),
+(4, 'jwww', 'hhh', 800, 1),
+(5, 'bracelet', 'gold', 94, 1),
+(6, 'brac', 'brac', 56, 1),
+(7, 'b', 'b', 4, 1);
 
 -- --------------------------------------------------------
 
