@@ -4,6 +4,8 @@ require_once("../BE/jewelry.php");
 getall();
 ?>
 
+
+
 <!DOCTYPE html>
 <html lang="en">
 
