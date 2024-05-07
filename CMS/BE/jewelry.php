@@ -11,6 +11,7 @@
        $db = DBConncet();
        $query="INSERT INTO tbl_jewelry (`NAME`,`TYPE`,`PRICE`) VALUES ('$obj->name','$obj->type','$obj->price')";
        $stmt=$db->query($query);
+       header("Location:../FE/about.html");
 
     }
 
