@@ -21,7 +21,12 @@
         $stmt=$db->query($query);
     }
     
-
+    function getall(){
+        $db = DBConncet();
+        $query="SELECT * FROM tbl_jewelry WHERE `IS_ACTIVE`>0";
+        $stmt=$db->query($query);
+        $_SESSION["j"] = $stmt;
+    }
 // ChangeStatus("b");
 
 

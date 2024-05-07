@@ -1,8 +1,14 @@
+<?php
+session_start();
+require_once("../BE/jewelry.php");
+getall();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <title>Zay Shop - About Page</title>
+    <title>Zay Shop - Product Listing Page</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -86,16 +92,14 @@ https://templatemo.com/tm-559-zay-shop
                             </div>
                         </div>
                     </div>
-                    <a class="nav-icon d-none d-lg-inline" href="#" data-bs-toggle="modal" data-bs-target="#templatemo_search">
-                        <i class="fa fa-fw fa-search text-dark mr-2"></i>
+                    <a class="nav-icon d-none d-lg-inline" href="" data-bs-toggle="modal" data-bs-target="">
+                        <span>Preview Client Site</ispan>
                     </a>
                     <a class="nav-icon position-relative text-decoration-none" href="#">
-                        <i class="fa fa-fw fa-cart-arrow-down text-dark mr-1"></i>
-                        <span class="position-absolute top-0 left-100 translate-middle badge rounded-pill bg-light text-dark">7</span>
+                        <span>Sign Up</span>
                     </a>
                     <a class="nav-icon position-relative text-decoration-none" href="#">
-                        <i class="fa fa-fw fa-user text-dark mr-3"></i>
-                        <span class="position-absolute top-0 left-100 translate-middle badge rounded-pill bg-light text-dark">+99</span>
+                        <span >Logout</span>
                     </a>
                 </div>
             </div>
@@ -123,68 +127,97 @@ https://templatemo.com/tm-559-zay-shop
 
 
 
-    <section class="bg-success py-5">
-        <div class="container">
-            <div class="row align-items-center py-5">
-                <div class="col-md-8 text-white">
-                    <h1>About Us</h1>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                    </p>
-                </div>
-                <div class="col-md-4">
-                    <img src="assets/img/about-hero.svg" alt="About Hero">
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Close Banner -->
-
-    <!-- Start Section -->
-    <section class="container py-5">
-        <div class="row text-center pt-5 pb-3">
-            <div class="col-lg-6 m-auto">
-                <h1 class="h1">Our Services</h1>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                    Lorem ipsum dolor sit amet.
-                </p>
-            </div>
-        </div>
+    <!-- Start Content -->
+    <div class="container py-5">
         <div class="row">
 
-            <div class="col-md-6 col-lg-3 pb-5">
-                <div class="h-100 py-5 services-icon-wap shadow">
-                    <div class="h1 text-success text-center"><i class="fa fa-truck fa-lg"></i></div>
-                    <h2 class="h5 mt-4 text-center">Delivery Services</h2>
+            <div class="col-lg-3">
+                <h1 class="h2 pb-4">Categories</h1>
+                <ul class="list-unstyled templatemo-accordion">
+                    <li class="pb-3">
+                        <a class="collapsed d-flex justify-content-between h3 text-decoration-none" href="#">
+                            Sale
+                            <i class="pull-right fa fa-fw fa-chevron-circle-down mt-1"></i>
+                        </a>
+                        <ul id="collapseTwo" class="collapse list-unstyled pl-3">
+                            <li><a class="text-decoration-none" href="#">Sport</a></li>
+                            <li><a class="text-decoration-none" href="#">Luxury</a></li>
+                        </ul>
+                    </li>
+                    <li class="pb-3">
+                        <a class="collapsed d-flex justify-content-between h3 text-decoration-none" href="#">
+                            Product
+                            <i class="pull-right fa fa-fw fa-chevron-circle-down mt-1"></i>
+                        </a>
+                        <ul id="collapseThree" class="collapse list-unstyled pl-3">
+                            <li><a class="text-decoration-none" href="#">Bag</a></li>
+                            <li><a class="text-decoration-none" href="#">Sweather</a></li>
+                            <li><a class="text-decoration-none" href="#">Sunglass</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="col-lg-9">
+                <div class="row">
+                </div>
+                <div class="row">
+                    <?php foreach ($_SESSION["j"] as $row) {
+                        ?>
+                        
+                    <div class="col-md-4">
+                        <div class="card mb-4 product-wap rounded-0">
+                            <div class="card rounded-0">
+                                <img class="card-img rounded-0 img-fluid" src="assets/img/<?php echo $row["ID"]; ?>">
+                                <div class="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">
+                                    <ul class="list-unstyled">
+                                        <li><a class="btn btn-success text-white" href="shop-single.php"><i class="far fa-heart"></i></a></li>
+                                        <li><a class="btn btn-success text-white mt-2" href="shop-single.php"><i class="far fa-eye"></i></a></li>
+                                        <li><a class="btn btn-success text-white mt-2" href="shop-single.php"><i class="fas fa-cart-plus"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <a href="shop-single.php" class="h3 text-decoration-none"><?php echo $row["Name"]; ?></a>
+                                <ul class="w-100 list-unstyled d-flex justify-content-between mb-0">
+                                    <li class="pt-2">
+                                        <span class="product-color-dot color-dot-red float-left rounded-circle ml-1"></span>
+                                        <span class="product-color-dot color-dot-blue float-left rounded-circle ml-1"></span>
+                                        <span class="product-color-dot color-dot-black float-left rounded-circle ml-1"></span>
+                                        <span class="product-color-dot color-dot-light float-left rounded-circle ml-1"></span>
+                                        <span class="product-color-dot color-dot-green float-left rounded-circle ml-1"></span>
+                                    </li>
+                                </ul>
+                                <ul class="list-unstyled d-flex justify-content-center mb-1">
+                                    <input type="button" value="Activation" onclick="<?php ChangeStatus($row["NAME"]); ?>">
+                                </ul>
+                                <p class="text-center mb-0"><?php $row["PRICE"]; ?></p>
+                            </div>
+                        </div>
+                    </div>
+                    <?php  
+                    }
+                    ?>
+                    
+                </div>
+                <div div="row">
+                    <ul class="pagination pagination-lg justify-content-end">
+                        <li class="page-item disabled">
+                            <a class="page-link active rounded-0 mr-3 shadow-sm border-top-0 border-left-0" href="#" tabindex="-1">1</a>
+                        </li>
+                        <li class="page-item">
+                            <a class="page-link rounded-0 mr-3 shadow-sm border-top-0 border-left-0 text-dark" href="#">2</a>
+                        </li>
+                        <li class="page-item">
+                            <a class="page-link rounded-0 shadow-sm border-top-0 border-left-0 text-dark" href="#">3</a>
+                        </li>
+                    </ul>
                 </div>
             </div>
 
-            <div class="col-md-6 col-lg-3 pb-5">
-                <div class="h-100 py-5 services-icon-wap shadow">
-                    <div class="h1 text-success text-center"><i class="fas fa-exchange-alt"></i></div>
-                    <h2 class="h5 mt-4 text-center">Shipping & Return</h2>
-                </div>
-            </div>
-
-            <div class="col-md-6 col-lg-3 pb-5">
-                <div class="h-100 py-5 services-icon-wap shadow">
-                    <div class="h1 text-success text-center"><i class="fa fa-percent"></i></div>
-                    <h2 class="h5 mt-4 text-center">Promotion</h2>
-                </div>
-            </div>
-
-            <div class="col-md-6 col-lg-3 pb-5">
-                <div class="h-100 py-5 services-icon-wap shadow">
-                    <div class="h1 text-success text-center"><i class="fa fa-user"></i></div>
-                    <h2 class="h5 mt-4 text-center">24 Hours Service</h2>
-                </div>
-            </div>
         </div>
-    </section>
-    <!-- End Section -->
+    </div>
+    <!-- End Content -->
 
     <!-- Start Brands -->
     <section class="bg-light py-5">
@@ -201,7 +234,7 @@ https://templatemo.com/tm-559-zay-shop
                     <div class="row d-flex flex-row">
                         <!--Controls-->
                         <div class="col-1 align-self-center">
-                            <a class="h1" href="#templatemo-slide-brand" role="button" data-bs-slide="prev">
+                            <a class="h1" href="#multi-item-example" role="button" data-bs-slide="prev">
                                 <i class="text-light fas fa-chevron-left"></i>
                             </a>
                         </div>
@@ -209,7 +242,7 @@ https://templatemo.com/tm-559-zay-shop
 
                         <!--Carousel Wrapper-->
                         <div class="col">
-                            <div class="carousel slide carousel-multi-item pt-2 pt-md-0" id="templatemo-slide-brand" data-bs-ride="carousel">
+                            <div class="carousel slide carousel-multi-item pt-2 pt-md-0" id="multi-item-example" data-bs-ride="carousel">
                                 <!--Slides-->
                                 <div class="carousel-inner product-links-wap" role="listbox">
 
@@ -278,7 +311,7 @@ https://templatemo.com/tm-559-zay-shop
 
                         <!--Controls-->
                         <div class="col-1 align-self-center">
-                            <a class="h1" href="#templatemo-slide-brand" role="button" data-bs-slide="next">
+                            <a class="h1" href="#multi-item-example" role="button" data-bs-slide="next">
                                 <i class="text-light fas fa-chevron-right"></i>
                             </a>
                         </div>
@@ -297,19 +330,19 @@ https://templatemo.com/tm-559-zay-shop
             <div class="row">
 
                 <div class="col-md-4 pt-5">
-                    <h2 class="h2 text-success border-bottom pb-3 border-light logo">Zay Shop</h2>
+                    <h2 class="h2 text-success border-bottom pb-3 border-light logo">Jewelry Shop</h2>
                     <ul class="list-unstyled text-light footer-link-list">
                         <li>
                             <i class="fas fa-map-marker-alt fa-fw"></i>
-                            123 Consectetur at ligula 10660
+                            Adnan Kassar School Of Business, Room 905
                         </li>
                         <li>
                             <i class="fa fa-phone fa-fw"></i>
-                            <a class="text-decoration-none" href="tel:010-020-0340">010-020-0340</a>
+                            <a class="text-decoration-none" href="tel:010-020-0340">01 123 123</a>
                         </li>
                         <li>
                             <i class="fa fa-envelope fa-fw"></i>
-                            <a class="text-decoration-none" href="mailto:info@company.com">info@company.com</a>
+                            <a class="text-decoration-none" href="mailto:info@company.com">jewelryshop@company.com.lb</a>
                         </li>
                     </ul>
                 </div>
@@ -317,13 +350,10 @@ https://templatemo.com/tm-559-zay-shop
                 <div class="col-md-4 pt-5">
                     <h2 class="h2 text-light border-bottom pb-3 border-light">Products</h2>
                     <ul class="list-unstyled text-light footer-link-list">
-                        <li><a class="text-decoration-none" href="#">Luxury</a></li>
-                        <li><a class="text-decoration-none" href="#">Sport Wear</a></li>
-                        <li><a class="text-decoration-none" href="#">Men's Shoes</a></li>
-                        <li><a class="text-decoration-none" href="#">Women's Shoes</a></li>
-                        <li><a class="text-decoration-none" href="#">Popular Dress</a></li>
-                        <li><a class="text-decoration-none" href="#">Gym Accessories</a></li>
-                        <li><a class="text-decoration-none" href="#">Sport Shoes</a></li>
+                        <li><a class="text-decoration-none" href="#">Bracelets</a></li>
+                        <li><a class="text-decoration-none" href="#">Earrings</a></li>
+                        <li><a class="text-decoration-none" href="#">Necklaces</a></li>
+                        <li><a class="text-decoration-none" href="#">Rings</a></li>
                     </ul>
                 </div>
 
@@ -385,6 +415,7 @@ https://templatemo.com/tm-559-zay-shop
 
     </footer>
     <!-- End Footer -->
+
 
     <!-- Start Script -->
     <script src="assets/js/jquery-1.11.0.min.js"></script>
